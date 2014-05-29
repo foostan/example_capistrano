@@ -9,6 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "shell", inline: <<-EOS
     sudo apt-get -y update
-    sudo apt-get install -y git
+    sudo apt-get install -y git apache2
+    sudo chown vagrant:vagrant /var/www -R
   EOS
 end
